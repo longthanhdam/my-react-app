@@ -18,8 +18,8 @@ jobs:
           name: install podman and configure
           command: |
             apt-get update && apt-get install -y podman
-            echo "[registries.insecure]
-registries = ['mmregistry.mmvietnam.com:5000']" > /etc/containers/registries.conf
+            echo "[registries.insecure]" > /etc/containers/registries.conf
+            echo "registries = ['mmregistry.mmvietnam.com:5000']" > /etc/containers/registries.conf
       - run:
           name: Clone Source Code
           command: |
