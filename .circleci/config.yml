@@ -13,17 +13,13 @@ jobs:
       REGISTRY_URL: "https://mmregistry.mmvietnam.com:5000"
       IMAGE_NAME: "my-react-app" # Tên image của bạn
     steps:
-      - checkout
+      - checkout # Lấy mã nguồn từ GitHub repository
       - run:
           name: Cài đặt Git và Podman
           command: |
             apt-get update && apt-get install -y git podman
             echo "[registries.insecure]
             registries = ['mmregistry.mmvietnam.com:5000']" > /etc/containers/registries.conf
-      - run:
-          name: Clone Source Code
-          command: |
-            git clone https://longthanhdam:${GITHUB_TOKEN}@github.com/longthanhdam/my-react-app.git .
       - run:
           name: Build React App
           command: |
