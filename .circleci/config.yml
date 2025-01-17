@@ -23,7 +23,7 @@ jobs:
       - run:
           name: Clone Source Code
           command: |
-            git clone https://github.com/longthanhdam/my-react-app.git .
+            git clone https://longthanhdam:${GITHUB_TOKEN}@github.com/longthanhdam/my-react-app.git .
       - run:
           name: Build React App
           command: |
