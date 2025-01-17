@@ -21,8 +21,9 @@ jobs:
             echo "[registries.insecure]
             registries = ['mmregistry.mmvietnam.com:5000']" > /etc/containers/registries.conf
       - run:
-          name: Cài đặt NPM dependencies và build ứng dụng React
+          name: Cài đặt NPM và build ứng dụng React
           command: |
+            cd my-react-app # Chuyển đến thư mục chứa ứng dụng React
             npm install
             npm run build
       - run:
